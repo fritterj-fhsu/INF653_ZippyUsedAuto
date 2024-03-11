@@ -1,12 +1,10 @@
 <?php include('view/header.php'); ?>
 
 <section>
-    <h2>Vehicles</h2>
-
      <!-- Form for Filtering and Sorting Vehicles -->
+     <div class="form-container">
      <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
         <!-- Make Dropdown -->
-        <label for="make">Make:</label>
         <select name="make_id" id="make">
             <option value="0" <?= ($make_id ?? 0) == 0 ? 'selected' : '' ?>>View All Makes</option>
             <?php foreach ($makes as $makeId => $makeName) : ?>
@@ -17,7 +15,6 @@
         </select>
 
         <!-- Type Dropdown -->
-        <label for="type">Type:</label>
         <select name="type_id" id="type">
             <option value="0" <?= ($type_id ?? 0) == 0 ? 'selected' : '' ?>>View All Types</option>
             <?php foreach ($types as $typeId => $typeName) : ?>
@@ -28,7 +25,6 @@
         </select>
 
         <!-- Class Dropdown -->
-        <label for="class">Class:</label>
         <select name="class_id" id="class">
             <option value="0" <?= ($class_id ?? 0) == 0 ? 'selected' : '' ?>>View All Classes</option>
             <?php foreach ($classes as $classId => $className) : ?>
@@ -53,30 +49,29 @@
         <!-- Submit Button -->
         <button type="submit" name="submit">Apply</button>
     </form>
+    </div>
 
     <?php if (!empty($vehicles)) : ?>
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Year</th>
-                    <th>Model</th>
-                    <th>Price</th>
                     <th>Make</th>
+                    <th>Model</th>
                     <th>Type</th>
                     <th>Class</th>
+                    <th>Price</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($vehicles as $vehicle) : ?>
                     <tr>
-                        <td><?= $vehicle['id']; ?></td>
                         <td><?= $vehicle['year']; ?></td>
-                        <td><?= $vehicle['model']; ?></td>
-                        <td><?= $vehicle['price']; ?></td>
                         <td><?= $makes[$vehicle['make_id']]; ?></td>
+                        <td><?= $vehicle['model']; ?></td>
                         <td><?= $types[$vehicle['type_id']]; ?></td>
                         <td><?= $classes[$vehicle['class_id']]; ?></td>
+                        <td><?= $vehicle['price']; ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

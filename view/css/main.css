@@ -1,0 +1,71 @@
+header h1 {
+    margin-left: 10px;
+    color: #3498db;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.form-container {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 10px;
+    background-color: #ffffff;
+    border: 1px solid #3498db;
+}
+
+.form-container select {
+    width: calc(100% - 20px);
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+.form-container button {
+    background-color: #3498db; /* Blue background color for the button */
+    color: #ffffff; /* White text color for the button */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    margin-bottom: 5px;
+}
+
+.form-container button:hover {
+    background-color: #2980b9; /* Darker blue background color on hover */
+}
+
+
+table {
+    border-collapse: collapse;
+    width: calc(100% - 20px);
+    margin: 10px;
+    background-color: #ffffff;
+    border: 1px solid #3498db;
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #3498db;
+}
+
+th {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+footer p {
+    text-align: right;
+    margin-right: 10px;
+    color: #bdc3c7;
+    padding-top: 10px;
+}
