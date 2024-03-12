@@ -1,19 +1,19 @@
 <?php
-require 'model/vehicles_db.php';
-require 'model/makes_db.php';
-require 'model/types_db.php';
-require 'model/classes_db.php';
+require_once 'model/vehicles_db.php';
+require_once 'model/makes_db.php';
+require_once 'model/types_db.php';
+require_once 'model/classes_db.php';
 
+$make_id = $_GET['make_id'] ?? null;
+$type_id = $_GET['type_id'] ?? null;
+$class_id = $_GET['class_id'] ?? null;
 $sort = $_GET['sort'] ?? 'price';
 
 if (isset($_GET['submit'])) {
     $make_id = ($_GET['make_id'] ?? 0) != 0 ? $_GET['make_id'] : null;
     $type_id = ($_GET['type_id'] ?? 0) != 0 ? $_GET['type_id'] : null;
     $class_id = ($_GET['class_id'] ?? 0) != 0 ? $_GET['class_id'] : null;
-
-    if (isset($_GET['sort'])) {
-        $sort = $_GET['sort'];
-    }
+    if (isset($_GET['sort'])) { $sort = $_GET['sort'];}
 
     $vehicles = getVehicles($make_id, $type_id, $class_id);
 } else {

@@ -8,7 +8,7 @@ function getMakes() {
     $makes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $makesArray = [];
     foreach ($makes as $make) {
-        $makesArray[$make['id']] = $make['make'];
+        $makesArray[$make['ID']] = $make['Make'];
     }
     return $makesArray;
 }
@@ -16,7 +16,7 @@ function getMakes() {
 function insertMake($makeName) {
     global $pdo;
 
-    $sql = "INSERT INTO makes (make_name) VALUES (:makeName)";
+    $sql = "INSERT INTO makes (Make) VALUES (:makeName)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':makeName', $makeName, PDO::PARAM_STR);
 

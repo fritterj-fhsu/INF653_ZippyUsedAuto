@@ -52,7 +52,7 @@ function insertVehicle($year, $model, $price, $typeId, $classId, $makeId) {
 function deleteVehicle($vehicleId) {
     global $pdo;
 
-    $sql = "DELETE FROM vehicles WHERE id = :vehicleId";
+    $sql = "DELETE FROM vehicles WHERE ID = :vehicleId";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':vehicleId', $vehicleId, PDO::PARAM_INT);
 

@@ -10,9 +10,8 @@
 </head>
 
 <body>
-    <main>
-        <header>
-            <h1>Zippy Used Autos</h1>
-            <hr>
-        </header>
-    </main>
+    <header>
+        <h1 class="container"><a href="index.php">Zippy Used Autos</a></h1>
+        <hr>
+    </header>
+    <div class="container">

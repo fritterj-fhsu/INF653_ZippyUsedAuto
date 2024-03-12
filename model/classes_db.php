@@ -8,7 +8,7 @@ function getClasses() {
     $classes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $classesArray = [];
     foreach ($classes as $class) {
-        $classesArray[$class['id']] = $class['class'];
+        $classesArray[$class['ID']] = $class['Class'];
     }
     return $classesArray;
 }
@@ -16,7 +16,7 @@ function getClasses() {
 function insertClass($className) {
     global $pdo;
 
-    $sql = "INSERT INTO classes (class_name) VALUES (:className)";
+    $sql = "INSERT INTO classes (Class) VALUES (:className)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':className', $className, PDO::PARAM_STR);
 
@@ -26,7 +26,7 @@ function insertClass($className) {
 function deleteClass($classId) {
     global $pdo;
 
-    $sql = "DELETE FROM classes WHERE id = :classId";
+    $sql = "DELETE FROM classes WHERE ID = :classId";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':classId', $classId, PDO::PARAM_INT);
 

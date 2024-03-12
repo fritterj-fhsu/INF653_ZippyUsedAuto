@@ -1,9 +1,9 @@
-</main>
+</div>
 </body>
 
 <footer>
     <hr>
-    <p><span>&copy;</span>2024 Zippy Used Autos</p>
+    <p class="container"><span>&copy;</span>2024 Zippy Used Autos</p>
 </footer>
 
 </html>

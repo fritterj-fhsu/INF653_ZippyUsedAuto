@@ -8,7 +8,7 @@ function getTypes() {
     $types = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $typesArray = [];
     foreach ($types as $type) {
-        $typesArray[$type['id']] = $type['type'];
+        $typesArray[$type['ID']] = $type['Type'];
     }
     return $typesArray;
 }
@@ -16,7 +16,7 @@ function getTypes() {
 function insertType($typeName) {
     global $pdo;
 
-    $sql = "INSERT INTO types (type_name) VALUES (:typeName)";
+    $sql = "INSERT INTO types (Type) VALUES (:typeName)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':typeName', $typeName, PDO::PARAM_STR);
 
@@ -26,7 +26,7 @@ function insertType($typeName) {
 function deleteType($typeId) {
     global $pdo;
 
-    $sql = "DELETE FROM types WHERE id = :typeId";
+    $sql = "DELETE FROM types WHERE ID = :typeId";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':typeId', $typeId, PDO::PARAM_INT);
 

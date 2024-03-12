@@ -34,9 +34,8 @@
             <?php endforeach; ?>
         </select>
 
-
         <!-- Sorting Radio Buttons -->
-        <label>Sort by:</label>
+        <label class="sort-by">Sort by:</label>
         <label>
             <input type="radio" name="sort" value="price" <?= $sort == 'price' ? 'checked' : '' ?>>
             Price
@@ -47,7 +46,7 @@
         </label>
 
         <!-- Submit Button -->
-        <button type="submit" name="submit">Apply</button>
+        <button type="submit" name="submit" class="apply-button">Apply</button>
     </form>
     </div>
 
