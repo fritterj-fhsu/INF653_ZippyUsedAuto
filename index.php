@@ -1,4 +1,10 @@
 <?php
+
+if (strpos($_SERVER['REQUEST_URI'], '/admin') !== false) {
+    include 'admin/index.php';
+    exit();
+}
+
 require_once 'model/vehicles_db.php';
 require_once 'model/makes_db.php';
 require_once 'model/types_db.php';
